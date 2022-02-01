@@ -2,9 +2,10 @@ const birdsBlock = document.querySelector('ul');
 const birds = birdsBlock.querySelectorAll('.bird');
 const img = document.querySelector('img');
 const btnPlay = document.querySelector('.btn-play');
+const downloadLink = document.querySelector('.download');
 
 const audio = new Audio();
-audio.src = './assets/audio/solovey.mp3';
+audio.src = './assets/audio/forest.mp3';
 let isPlay = false;
 
 function playAudio(ev) {
@@ -20,6 +21,7 @@ function playAudio(ev) {
 
         const birdName = ev.target.dataset.birdName;
         audio.src = `./assets/audio/${birdName}.mp3`;
+        downloadLink.href = audio.src;
         audio.currentTime = 0;
         pausePlay();
     }
